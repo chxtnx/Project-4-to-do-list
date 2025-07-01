@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listify</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="material-icons logo-icon">list_alt</span>
+        Listify
+      </div>
+      <div class="nav">
+        <button class="nav-btn" id="todo-btn"><span class="material-icons">check_circle</span></button>
+<button class="nav-btn" id="theme-toggle-btn">
+  <span class="material-icons">light_mode</span>
+</button>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section id="todo-section" class="panel-section active">
+        <div class="todo-layout">
+          <div class="todo-panel">
+            <div class="filters">
+              <h3>Time Filters</h3>
+              <ul id="sidebar-filters">
+                <li data-filter="all">All Tasks</li>
+                <li data-filter="today">Today</li>
+                <li data-filter="3days">Next 3 Days</li>
+                <li data-filter="bookmarks">Starred ⭐</li>
+              </ul>
+            </div>
+            <div class="categories">
+              <h3>Lists</h3>
+              <ul>
+                <li data-cat="general">General</li>
+                <li data-cat="work">Work</li>
+                <li data-cat="study">Study</li>
+                <li data-cat="shopping">Shopping</li>
+                <li data-cat="travel">Travel</li>
+              </ul>
+            </div>
+            <div class="task-filters">
+              <h3>Filters</h3>
+              <ul>
+                <li data-view="all">All</li>
+                <li data-view="completed">Completed Tasks</li>
+                <li data-view="due">Due Tomorrow</li>
+                <li data-view="priority">Priority Sort</li>
+              </ul>
+            </div>
+          </div>
+          <div class="task-display" id="taskDisplay">
+            <ul id="taskList"></ul>
+          </div>
+          <div class="calendar-widget" id="calendarWidget">
+         <div class="calendar-header">
+       <button id="prevMonth">&lt;</button>
+       <span id="calendarMonth"></span>
+        <button id="nextMonth">&gt;</button>
+        </div>
+        <div id="calendarGrid"></div>
+       </div>
+
+        </div>
+      </section>
+
+      <button class="add-task-btn" title="Add Task" onclick="document.getElementById('taskModal').classList.add('active')">
+        <span class="material-icons">add</span>
+      </button>
+      <div class="task-form-modal" id="taskModal" onclick="if(event.target.id==='taskModal') this.classList.remove('active')">
+        <form class="task-form" id="taskForm">
+          <h3><span class="material-icons">edit</span>New Task</h3>
+          <input type="text" id="taskName" placeholder="Task Name" required />
+          <input type="date" id="taskDate" required />
+          <input type="time" id="taskTime" required />
+          <select id="taskPriority">
+            <option value="">Select Priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <select id="taskCategory">
+            <option value="">Select Category</option>
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+            <option value="general">General</option>
+            <option value="shopping">Shopping</option>
+            <option value="travel">Travel</option>
+          </select>
+<div class="form-group bookmark-group">
+  <label class="bookmark-label" for="taskBookmark">
+    <input type="checkbox" id="taskBookmark" class="bookmark" />
+    Bookmark
+  </label>
+</div>
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
