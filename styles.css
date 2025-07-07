@@ -182,6 +182,11 @@ li.active {
 .dark-mode li:hover {
   background: #555;
 }
+.dark-mode .category-tag.work { background: #3a6ea5; }
+.dark-mode .category-tag.study { background: #734f96; }
+.dark-mode .category-tag.general { background: #4caf50; }
+.dark-mode .category-tag.shopping { background: #ff9800; }
+.dark-mode .category-tag.travel { background: #26c6da; }
 
 .filters li:nth-child(1)::before { content: 'event_note'; color: #ed7d31; }
 .filters li:nth-child(2)::before { content: 'today'; color: #ff7043; }
